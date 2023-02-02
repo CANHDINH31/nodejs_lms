@@ -15,10 +15,17 @@ const courseSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    firebase: { type: String, required: true },
     videos: [
       {
         type: mongoose.SchemaTypes.ObjectId,
         ref: "video",
+      },
+    ],
+    documents: [
+      {
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: "document",
       },
     ],
   },

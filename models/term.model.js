@@ -15,6 +15,7 @@ const termSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    firebase: { type: String, required: true },
     courses: [
       {
         type: mongoose.SchemaTypes.ObjectId,

@@ -65,7 +65,10 @@ module.exports = {
   },
   getCourseById: async (req, res, next) => {
     let id = req.params.id;
-    let course = await courseModel.findById(id).populate("videos");
+    let course = await courseModel
+      .findById(id)
+      .populate("videos")
+      .populate("documents");
     if (!course) {
       throw new ErrorResponse(404, "not found course");
     }
